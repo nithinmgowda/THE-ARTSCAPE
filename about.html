@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultra Minimalistic - About Us</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 0.9rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        main {
+            width: 100%;
+            max-width: 800px;
+            background-color: #fff;
+            padding: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        h1, h2 {
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        p {
+            color: #666;
+            text-align: center;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        label {
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 0.75rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        .error {
+            color: #e74c3c;
+            font-size: 0.8rem;
+            margin-top: 0.25rem;
+        }
+
+        .success-message {
+            text-align: center;
+            color: #2ecc71;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">THE ARTSCAPE</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="about.html">About</a>
+        </div>
+    </nav>
+
+    <main>
+        <h1>About Us</h1>
+        <p>We are a collective of minimalist artists dedicated to exploring the essence of form and space through monochromatic artworks. Our gallery showcases pieces that challenge perceptions and evoke contemplation.</p>
+
+        <h2>Get in Touch</h2>
+        <form id="contactForm">
+            <div>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+                <div class="error" id="nameError"></div>
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <div class="error" id="emailError"></div>
+            </div>
+            <div>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+                <div class="error" id="messageError"></div>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="successMessage" class="success-message" style="display: none;">
+            Thank you for your message. We'll get back to you soon.
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contactForm');
+            const successMessage = document.getElementById('successMessage');
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (validateForm()) {
+                    // Simulating form submission
+                    console.log('Form submitted:', {
+                        name: form.name.value,
+                        email: form.email.value,
+                        message: form.message.value
+                    });
+                    form.style.display = 'none';
+                    successMessage.style.display = 'block';
+                }
+            });
+
+            function validateForm() {
+                let isValid = true;
+                const nameError = document.getElementById('nameError');
+                const emailError = document.getElementById('emailError');
+                const messageError = document.getElementById('messageError');
+
+                // Reset error messages
+                nameError.textContent = '';
+                emailError.textContent = '';
+                messageError.textContent = '';
+
+                // Validate name
+                if (form.name.value.length < 2) {
+                    nameError.textContent = 'Name must be at least 2 characters.';
+                    isValid = false;
+                }
+
+                // Validate email
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(form.email.value)) {
+                    emailError.textContent = 'Please enter a valid email address.';
+                    isValid = false;
+                }
+
+                // Validate message
+                if (form.message.value.length < 10) {
+                    messageError.textContent = 'Message must be at least 10 characters.';
+                    isValid = false;
+                }
+
+                return isValid;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultra Minimalistic</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            padding: 2rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 0.9rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 0 auto;
+            max-width: 1400px;
+        }
+
+        .gallery-item {
+            aspect-ratio: 1;
+            background-color: #fff;
+            padding: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-2px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 0.2em;
+            margin-bottom: 1rem;
+        }
+
+        .header p {
+            color: #666;
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 1rem;
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo"><b>The Artscape</b></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="about.html">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header class="header">
+        <h1><b>THE ARTSCAPE</b></h1>
+        <p>A curated collection of monochromatic artworks exploring space, form, and human presence in minimal compositions.</p>
+    </header>
+
+    <main class="gallery" id="gallery">
+        
+        <div class="gallery-item"><a href="https://unsplash.com/photos/assorted-color-paintbrushes-_Yc7OtfFn-0" target="_blank"><img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXJ0fGVufDB8fDB8fHww" alt="Minimalist artwork 1"></a></div>
+
+
+
+
+        <div class="gallery-item"><a href="https://unsplash.com/photos/red-blue-and-white-flowers-5TK1F5VfdIk" target="_blank"><img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YXJ0fGVufDB8fDB8fHww" alt="Minimalist artwork 2"></a></div>
+
+
+
+
+
+        <div class="gallery-item"><a href="https://unsplash.com/photos/abstract-painting-t2Sai-AqIpI" target="_blank"><img src="https://images.unsplash.com/photo-1515405295579-ba7b45403062?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGFydHxlbnwwfHwwfHx8MA%3D%3D" alt="Minimalist artwork 3"></a></div>
+
+
+
+
+
+
+        <div class="gallery-item"><a href="https://unsplash.com/photos/woman-illustration-painting-Wa9ilX9XYOI" target="_blank"><img src="https://images.unsplash.com/photo-1578301978018-3005759f48f7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGFydHxlbnwwfHwwfHx8MA%3D%3D" alt="Minimalist artwork 4"></a></div>
+
+
+
+
+        <div class="gallery-item"><a href="https://unsplash.com/photos/C9t94JC4_L8" target="_blank"><img src="https://images.unsplash.com/photo-1549277513-f1b32fe1f8f5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTl8fGFydHxlbnwwfHwwfHx8MA%3D%3D" alt="Minimalist artwork 5"></a></div>
+
+
+
+        <div class="gallery-item"><a href="https://unsplash.com/photos/angel-in-blue-dress-painting-JZdPBgU6Nik" target="_blank"><img src="https://images.unsplash.com/photo-1577083552792-a0d461cb1dd6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGFydHxlbnwwfHwwfHx8MA%3D%3D" alt="Minimalist artwork 6"></a></div>
+
+
+
+        <div class="gallery-item"><a href="https://unsplash.com/photos/red-and-green-floral-paintin-v15kmerLWcA" target="_blank"><img src="https://images.unsplash.com/photo-1482160549825-59d1b23cb208?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fGFydHxlbnwwfHwwfHx8MA%3D%3D" alt="Minimalist artwork 7"></a></div>
+
+
+
+
+        <div class="gallery-item"><a href="https://unsplash.com/photos/a-black-background-with-a-purple-and-yellow-swirl-f14nh9w9WOo" target="_blank"><img src="https://images.unsplash.com/photo-1580136579312-94651dfd596d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fGFydHxlbnwwfHwwfHx8MA%3D%3D" alt="Minimalist artwork 8"></a></div>
+
+
+
+        <div class="gallery-item"><a href="https://unsplash.com/photos/a-painting-of-a-landscape-with-people-and-animals-hcXPIKsC2PM" target="_blank"><img src="https://images.unsplash.com/photo-1579541671172-43429ce17aca?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDZ8fGFydHxlbnwwfHwwfHx8MA%3D%3D" alt="Minimalist artwork 9"></a></div>
+
+
+
+        <div class="gallery-item"><a href="https://unsplash.com/photos/brown-and-black-wooden-guitar-and-black-leather-bag-Agwv1mKDUnc" target="_blank"><img src="https://images.unsplash.com/photo-1588260692987-01360da8185b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjN8fGFydHxlbnwwfHwwfHx8MA%3D%3D" alt="Minimalist artwork 10"></a></div>
+
+
+
+        <div class="gallery-item"><a href="https://unsplash.com/photos/red-and-blue-roses-in-vase-YIfFVwDcgu8" target="_blank"><img src="https://images.unsplash.com/photo-1579783901586-d88db74b4fe4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzJ8fGFydHxlbnwwfHwwfHx8MA%3D%3D" alt="Minimalist artwork 11"></a></div>
+
+
+
+        <div class="gallery-item"><a href="https://unsplash.com/photos/a-painting-of-a-woman-sitting-by-a-fountain-oeUzg8czQ3Y" target="_blank"><img src="https://images.unsplash.com/photo-1579541764764-6401d4100dd7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODR8fGFydHxlbnwwfHwwfHx8MA%3D%3D" alt="Minimalist artwork 12"></a></div>
+    </main>
+
+    
+</body>
+</html>
